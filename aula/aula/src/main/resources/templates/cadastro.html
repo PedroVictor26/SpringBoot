@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro</title>
+    <link rel="stylesheet" th:href="@{/css/cadastro.css">
+</head>
+<body>
+
+    <div class="container">
+        <img src="@{/images/Logo.png}" alt="Logo da empresa" class="logo">
+        <h2>Cadastro de Usuario</h2>
+        <form th:action="@/" th:object="${usuario}" method="post">
+            <div class="form-group">
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" th:field="*{nome}" required="required"/>
+            </div>
+            <div class="form-group">
+                <label for="Email">Senha: </label>
+                <input type="email" id="email" th:field="*{email}" required="required"/>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha: </label>
+                <input type="password" id="senha" th:field="*{senha}" required="required"/>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+            <a th:href="@{lista}" class="link-usuarios">Ver usuários cadastrados</a>
+        </form>
+
+    </div>
+    
+</body>
+</html>
